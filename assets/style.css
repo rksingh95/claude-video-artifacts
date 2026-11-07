@@ -103,3 +103,9 @@ code{font:500 .9em var(--mono);background:var(--code-chip,rgba(127,127,127,.15))
 .srcs a{color:var(--accent)}
 .nav{display:flex;justify-content:space-between;gap:12px;margin:32px 0 0;flex-wrap:wrap}
 .pillrow{display:flex;gap:8px;flex-wrap:wrap}
+
+.box.why{border-left:4px solid var(--warn)}
+.quiz details{border-top:1px solid var(--line);padding:8px 0}
+.quiz details:first-of-type{border-top:0}
+.quiz summary{cursor:pointer;font-weight:600}
+.quiz details p{margin:8px 0 0;color:var(--muted)}

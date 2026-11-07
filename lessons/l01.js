@@ -4,6 +4,7 @@ verified:['Install command, requirements and version check read from Anthropic\'
 unverified:['Windows and Linux steps were not run by us','Prices change: check the plan page yourself'],
 sources:[['Claude Code setup (official docs)','https://code.claude.com/docs/en/setup']],
 beginner:[
+ {box:['why','Why this matters','The folder is the fence. Whatever Claude Code can see, it can read and change. One folder per video keeps your other files out of reach and makes every version easy to find.']},
  {p:'Claude Code is the assistant that runs the open tools for you. It works inside one folder on your computer. Everything for one video lives in that folder.'},
  {box:['note','Be clear about this','Claude Code is not open source. It needs a Pro, Max, Ultra, Team or Enterprise plan, or a Console account. The free claude.ai plan does not include Claude Code. It is the one closed tool in this course. Every tool it runs in lessons 2 to 13 is open source.']},
  {step:['1','Install Claude Code','On macOS, Linux or WSL, run the native installer, then open a new terminal window and check the version.',[{prompt:['Terminal','curl -fsSL https://claude.ai/install.sh | bash'] },{prompt:['Terminal','claude --version']}]]},
@@ -12,7 +13,8 @@ beginner:[
  {step:['4','Start Claude inside that folder',null,[{prompt:['Terminal','claude']}]]},
  {step:['5','Ask it to look, not change',null,[{prompt:['Prompt to Claude','List the files in this folder. Do not change or delete anything. Tell me which file is my video and its duration, resolution and orientation, and show the command you used.']}]]},
  {box:['check','Check it worked','Claude names your clip, gives a duration and says whether it is vertical, and shows the command it ran. If it only guesses, ask it to run <code>ffprobe</code> and show the output (lesson 2).']},
- {box:['mistake','Common mistake','Starting Claude in your home folder. It can then see far more than one video. Start it inside the project folder.']}
+ {box:['mistake','Common mistake','Starting Claude in your home folder. It can then see far more than one video. Start it inside the project folder.']},
+ {quiz:[['Why one folder per video?','Claude Code works inside the folder you start it in. A small folder means it only sees that video, and your versions and checks stay together.'],['Your prompt says "do not change anything". How do you know it listened?','Ask it to show every command it ran. Reading commands like <code>ls</code> and <code>ffprobe</code> do not change files; anything that writes or deletes should not appear.']]}
 ],
 under:[
  {p:'Requirements from the official page: macOS 13.0 or later, or Windows 10 1809 or later. Alternatives to the native installer exist: Homebrew (casks <code>claude-code</code> for stable and <code>claude-code@latest</code>), WinGet, and npm.'},
@@ -21,6 +23,8 @@ under:[
  {h:'Rules we put in CLAUDE.md'},
  {p:'A file called <code>CLAUDE.md</code> in the project folder is read by Claude Code at the start of a session. Ours holds the rules below. Start with yours:'},
  {prompt:['CLAUDE.md','# My video studio\n- Never change files in raw/. Work on copies.\n- Name outputs reel-v1.mp4, reel-v2.mp4. Never overwrite a version.\n- Never invent a result. If you did not run it, say so.\n- Show every command you run and its output.\n- Ask before deleting, installing or posting anything.']},
- {p:'In our studio we also record a SHA-256 hash of every exported version, and move files to a <code>_to_delete</code> folder instead of deleting them.'}
+ {p:'In our studio we also record a SHA-256 hash of every exported version, and move files to a <code>_to_delete</code> folder instead of deleting them.'},
+ {h:'If something does not work'},
+ {table:[['What you see','What it usually means'],[['<code>python3</code> prints a message about agreeing to the Xcode licence','On a Mac, <code>/usr/bin/python3</code> is Apple\'s developer-tools Python. We saw this message on our own Mac on 7 Nov 2026. The message itself tells you the fix (<code>sudo xcodebuild -license</code>); a Homebrew Python (<code>/opt/homebrew/bin/python3</code>) avoids it. Run <code>which -a python3</code> to see which one you get'],['<code>ffmpeg: command not found</code>','FFmpeg is not installed yet or not on your PATH (lesson 2)'],['Claude says it cannot see your clip','It was started in a different folder. Quit, <code>cd</code> into the project folder, start it again']]]}
 ],
 carousel:[['Lesson 1','Set up Claude Code for video','The one closed tool. The rest are open.'],['Step 1','Install and sign in'],['Step 2','One folder per video'],['Step 3','Start Claude inside it'],['Mistake','Starting in your home folder'],['Full lesson','Link in bio','Free, open course']]});

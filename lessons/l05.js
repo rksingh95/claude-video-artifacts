@@ -11,6 +11,7 @@ beginner:[
  {ul:['<b>Hair</b>: strands should not flicker in and out','<b>Glasses</b>: lenses should not turn into holes','<b>Hands</b>: fingers should stay attached when you gesture','<b>Shoulders and chair</b>: no chair or wall bits left, no shoulder bitten off']},
  {box:['check','The rule we use','Look at real frames from the whole clip, not one. If the matte does not hold in all four places, do not remove the room. Use a framed layout (your video in a card on a coloured background) instead. A clean frame layout looks better than a broken cut-out.']},
  {box:['mistake','Common mistake','Judging the matte from a single good frame. Movement is where mattes fail. Check frames where you move your hands or turn your head.']},
+ {quiz:[['The matte looks perfect on one frame. Can you use it?','Not yet. Check frames where you move your hands or turn your head; that is where mattes break.'],['The glasses keep turning into holes. What now?','Do not remove the room. Use a framed layout instead; a clean frame beats a broken cut-out.']]},
  {box:['note','Honest note on a Mac-only shortcut','On a Mac there is also Apple\'s Vision framework, which makes a person matte without any download. We used it in our own edits. It is part of macOS and is not open source, so it is not a course tool. RVM is the open-source route.']}
 ],
 under:[

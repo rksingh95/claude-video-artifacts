@@ -19,6 +19,7 @@ function block(b){
   if(b.out) return '<div class="out"><span class="tag">'+b.out[0]+'</span><pre>'+esc(b.out[1])+'</pre></div>';
   if(b.step) return '<div class="step"><div class="num">'+b.step[0]+'</div><div><h3>'+b.step[1]+'</h3>'+(b.step[2]?'<p>'+b.step[2]+'</p>':'')+(b.step[3]||[]).map(block).join('')+'</div></div>';
   if(b.box) return '<div class="box '+b.box[0]+'"><div class="lab">'+b.box[1]+'</div>'+b.box[2]+'</div>';
+  if(b.quiz) return '<div class="box quiz"><div class="lab">Check yourself</div>'+b.quiz.map(function(q){return '<details><summary>'+q[0]+'</summary><p>'+q[1]+'</p></details>'}).join('')+'</div>';
   if(b.table) return '<div class="box"><div class="scroll"><table class="t"><tr>'+b.table[0].map(function(h){return '<th>'+h+'</th>'}).join('')+'</tr>'+b.table[1].map(function(r){return '<tr>'+r.map(function(c){return '<td>'+c+'</td>'}).join('')+'</tr>'}).join('')+'</table></div></div>';
   return '';
 }
@@ -56,7 +57,7 @@ function render(){
   document.title=(l?l.title+' · ':'')+'Claude Video Studio';
   window.scrollTo(0,0);
 }
-document.getElementById('foot').innerHTML='Free and open. Made by '+C.author+'. <a href="https://www.youtube.com/@practicetogetheral" target="_blank" rel="noopener">YouTube</a> · <a href="https://www.instagram.com/imsikarwar.rahul/" target="_blank" rel="noopener">Instagram</a> · <a href="https://www.facebook.com/rahulsankrit/" target="_blank" rel="noopener">Facebook</a>. Every command in this course was run on a Mac in '+'November 2026 unless the status badge on that lesson says otherwise. Last updated '+C.updated+'.';
+document.getElementById('foot').innerHTML='Free and open. Made by '+C.author+'. <a href="https://www.youtube.com/@practicetogetheral" target="_blank" rel="noopener">YouTube</a> · <a href="https://www.instagram.com/imsikarwar.rahul/" target="_blank" rel="noopener">Instagram</a> · <a href="https://www.facebook.com/rahulsankrit/" target="_blank" rel="noopener">Facebook</a>. Commands were run on a Mac in November 2026. Each lesson\'s "Verified" and "Not verified" lists say exactly what we ran and what we did not. Last updated '+C.updated+'.';
 function toast(m){var t=document.getElementById('toast');t.textContent=m;t.hidden=false;setTimeout(function(){t.hidden=true},1600)}
 function copy(text,msg){
   function fb(){var ta=document.createElement('textarea');ta.value=text;document.body.appendChild(ta);ta.select();try{document.execCommand('copy');toast(msg)}catch(e){toast('Select and copy manually')}ta.remove()}

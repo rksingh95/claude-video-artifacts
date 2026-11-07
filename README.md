@@ -31,7 +31,7 @@ New lessons, Reels and carousels land on all three. Pick the one you use.
 
 Claude does not watch your video like a person. It reads a transcript, runs open-source tools to cut, caption and mix, and **measures the result with scripts**. This course teaches every one of those tools, one lesson each, so you know what is happening and can check it yourself.
 
-The first export of the Reel behind this course **failed its own checks**: captions about 0.27 s early on average, and a sound peak of -1.7 dBTP against a -2.0 limit. We measured both, fixed both, and version 2 passed. That is the course in one sentence: edit with AI, then check.
+The Reels behind this course **failed their own checks** on the way. Reel 008 had a sound peak of -1.7 dBTP against a -2.0 limit, then captions about 0.27 s early on average. Reel 028, the Reel about that edit, had captions lagging the speech by up to 1.3 s in its first export. Each was found by measuring, and Reel 028 version 2 passed (largest caption offset 0.08 s, true peak -3.1 dBTP). That is the course in one sentence: edit with AI, then check.
 
 <p align="center">
   <img src="readme-assets/home.jpg" alt="Course home page on a phone" width="220">
@@ -59,7 +59,7 @@ The first export of the Reel behind this course **failed its own checks**: capti
 | 13 | Export for Instagram | FFmpeg (x264) | GPL build |
 | 14 | Capstone: one Reel, start to finish | everything | n/a |
 
-Every lesson has a **Beginner** tab and an **Under the hood** tab, a "Verified / Not verified" list, and an Instagram carousel for sharing.
+Every lesson has a **Beginner** tab and an **Under the hood** tab, a "Verified / Not verified" list, a short "Check yourself" quiz, and an Instagram carousel for sharing.
 
 ## Honest about what is open
 
@@ -90,14 +90,15 @@ python3 -m http.server 8000      # then open http://localhost:8000
 
 Opening `index.html` directly also works.
 
-### Scripts used in lessons 12 and 13
+### Scripts used in lessons 4, 12 and 13
 
-`scripts/` holds three small Python scripts that need only Python 3 and FFmpeg/ffprobe on your PATH:
+`scripts/` holds four small Python scripts that need only Python 3 and FFmpeg/ffprobe on your PATH:
 
 | Script | What it does |
 |---|---|
 | `scripts/spec_check.py` | checks an MP4 against the Instagram Reel specs we recorded (read-only) |
 | `scripts/pacing_check.py` | reports when the picture changes and the longest still stretch |
+| `scripts/caption_check.py` | compares caption start times with spoken word times (read-only) |
 | `scripts/hq_export.py` | one high-quality H.264/AAC export with the settings from lesson 13 |
 
 The Instagram numbers inside `spec_check.py` are our reading of Instagram's help pages and API notes. They can change.
@@ -113,7 +114,7 @@ Everything you need for the lessons is in this repo and in each tool's own repos
 ## Credits and third-party licences
 
 - [FFmpeg](https://ffmpeg.org/), [faster-whisper](https://github.com/SYSTRAN/faster-whisper), [OpenAI Whisper](https://github.com/openai/whisper), [Robust Video Matting](https://github.com/PeterL1n/RobustVideoMatting), [HyperFrames](https://github.com/heygen-com/hyperframes), [Playwright](https://github.com/microsoft/playwright), [yt-dlp](https://github.com/yt-dlp/yt-dlp), [video-use](https://github.com/browser-use/video-use), and the face-effects pack by [Vibha Ramprakash](https://github.com/Vibha-Ramprakash/claude-video-effects). Each keeps its own licence; none of their code is copied into this repository.
-- Course text, site code and the three scripts: MIT (see `LICENSE`).
+- Course text, site code and the four scripts: MIT (see `LICENSE`).
 - The photos in the lessons and the Reel covers show the author. Please do not reuse them as your own.
 
 ## Found a mistake?
