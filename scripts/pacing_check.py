@@ -8,7 +8,7 @@ Optional --srt adds caption-cue starts per window (a cue start counts as a text 
 It is a FLAG, never an approval. LIMITS: scene detection (ffmpeg 'scene' score) misses slow zooms, small
 overlays and caption changes; the default threshold is UNCALIBRATED; jump cuts that punch 100->114% can
 score low. Use --threshold 0.08..0.30 to see sensitivity. Never modifies the input.
-Usage: python3 tools/video/pacing_check.py file.mp4 [--srt file.srt] [--seconds 30] [--max-gap 2.5]
+Usage: python3 scripts/pacing_check.py file.mp4 [--srt file.srt] [--seconds 30] [--max-gap 2.5]
        [--threshold 0.12] [--fps 15] [--json]
 """
 import argparse, json, re, subprocess, sys
@@ -36,10 +36,12 @@ def srt_starts(path):
     return starts
 
 def main():
-    ap = argparse.ArgumentParser()
-    ap.add_argument("mp4"); ap.add_argument("--srt"); ap.add_argument("--seconds", type=float, default=30)
-    ap.add_argument("--max-gap", type=float, default=2.5); ap.add_argument("--threshold", type=float, default=0.12)
-    ap.add_argument("--fps", type=int, default=15); ap.add_argument("--json", action="store_true")
+    ap = argparse.ArgumentParser(description="Read-only pacing report: when the picture changes and the longest still stretch. A flag, never an approval.")
+    ap.add_argument("mp4", help="video to measure (never modified)"); ap.add_argument("--srt", help="optional captions: counts caption starts per 5 s window")
+    ap.add_argument("--seconds", type=float, default=30, help="analyse only the first N seconds (default 30)")
+    ap.add_argument("--max-gap", type=float, default=2.5, help="flag windows with a still stretch longer than this (default 2.5 s)")
+    ap.add_argument("--threshold", type=float, default=0.12, help="scene-change score that counts as a change (default 0.12, uncalibrated)")
+    ap.add_argument("--fps", type=int, default=15, help="frames per second analysed (default 15)"); ap.add_argument("--json", action="store_true", help="print JSON")
     a = ap.parse_args()
     dur = float(subprocess.run(["ffprobe", "-v", "error", "-show_entries", "format=duration", "-of", "csv=p=0", a.mp4],
                                capture_output=True, text=True).stdout.strip() or 0)
