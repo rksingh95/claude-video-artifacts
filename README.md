@@ -5,7 +5,7 @@
 ### Learn to edit video with Claude and free, open-source tools.
 **A free beginner course. 15 lessons. Real commands, real outputs, honest limits.**
 
-[**Start the course →**](https://rksingh95.github.io/claude-video-studio/) &nbsp;·&nbsp; Part of **100 Days of Practical AI** by [@imsikarwar.rahul](https://www.instagram.com/imsikarwar.rahul/)
+[**Start the course →**](https://rksingh95.github.io/claude-video-artifacts/) &nbsp;·&nbsp; [**See the studio repo**](https://github.com/rksingh95/calude-video-studio) &nbsp;·&nbsp; Part of **100 Days of Practical AI** by [@imsikarwar.rahul](https://www.instagram.com/imsikarwar.rahul/)
 
 <img src="readme-assets/course-tour.gif" alt="Screen recording of the course site: lesson map, a lesson, and the Under the hood tab" width="260">
 
@@ -83,8 +83,8 @@ The two promo Reels for this course are faceless: the pixel art is drawn by code
 The course is a static site (plain HTML, CSS and JavaScript, no build step).
 
 ```bash
-git clone https://github.com/rksingh95/claude-video-studio.git
-cd claude-video-studio
+git clone https://github.com/rksingh95/claude-video-artifacts.git
+cd claude-video-artifacts
 python3 -m http.server 8000      # then open http://localhost:8000
 ```
 
@@ -104,7 +104,11 @@ The Instagram numbers inside `spec_check.py` are our reading of Instagram's help
 
 ## Want the whole studio?
 
-The full editing pipeline behind this course (render, QA and export scripts, effects wiring) lives in our studio repository. **It is private for now** while we clean it for release; this section will link it when it is public. Everything you need for the lessons is in this repo and in each tool's own repository, linked on every lesson.
+The full editing pipeline behind this course (render, QA and export scripts, effects wiring, skills and real episode evidence) lives in the studio repository:
+
+**[rksingh95/calude-video-studio](https://github.com/rksingh95/calude-video-studio)**: the working studio that produced the Reels this course is built on.
+
+Everything you need for the lessons is in this repo and in each tool's own repository, linked on every lesson.
 
 ## Credits and third-party licences
 
