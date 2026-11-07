@@ -27,27 +27,25 @@ The first export of the Reel behind this course **failed its own checks**: capti
 
 ## What you will learn
 
-| # | Lesson | Tool | Licence | Evidence |
-|---|---|---|---|---|
-| 0 | How Claude edits your video | the loop | n/a | tested |
-| 1 | Set up your studio | Claude Code | closed source, paid plan | partial |
-| 2 | Look inside a clip, cut it, straighten it | FFmpeg | LGPL / GPL | tested |
-| 3 | Turn speech into timed words | faster-whisper | MIT | tested |
-| 4 | Captions that read well | SRT + FFmpeg | see FFmpeg | tested |
-| 5 | Remove the room behind you | Robust Video Matting | GPL-3.0 | **pending** (not run yet) |
-| 6 | Motion graphics from plain HTML | HyperFrames | Apache-2.0 | partial |
-| 7 | Effects that follow your face | claude-video-effects | MIT | tested |
-| 8 | Cutting by reading the transcript | video-use helpers | MIT | partial |
-| 9 | Sound: speech first, loudness measured | FFmpeg audio filters | see FFmpeg | partial |
-| 10 | Real screen demos you can prove | Playwright | Apache-2.0 | tested |
-| 11 | Learn from videos without copying | yt-dlp | Unlicense | partial |
-| 12 | Check your video like a reviewer | ffprobe + scripts | MIT | tested |
-| 13 | Export for Instagram | FFmpeg (x264) | GPL build | partial |
-| 14 | Capstone: one Reel, start to finish | everything | n/a | partial |
+| # | Lesson | Tool | Licence |
+|---|---|---|---|
+| 0 | How Claude edits your video | the loop | n/a |
+| 1 | Set up your studio | Claude Code | closed source, paid plan |
+| 2 | Look inside a clip, cut it, straighten it | FFmpeg | LGPL / GPL |
+| 3 | Turn speech into timed words | faster-whisper | MIT |
+| 4 | Captions that read well | SRT + FFmpeg | see FFmpeg |
+| 5 | Remove the room behind you | Robust Video Matting | GPL-3.0 |
+| 6 | Motion graphics from plain HTML | HyperFrames | Apache-2.0 |
+| 7 | Effects that follow your face | claude-video-effects | MIT |
+| 8 | Cutting by reading the transcript | video-use helpers | MIT |
+| 9 | Sound: speech first, loudness measured | FFmpeg audio filters | see FFmpeg |
+| 10 | Real screen demos you can prove | Playwright | Apache-2.0 |
+| 11 | Learn from videos without copying | yt-dlp | Unlicense |
+| 12 | Check your video like a reviewer | ffprobe + scripts | MIT |
+| 13 | Export for Instagram | FFmpeg (x264) | GPL build |
+| 14 | Capstone: one Reel, start to finish | everything | n/a |
 
 Every lesson has a **Beginner** tab and an **Under the hood** tab, a "Verified / Not verified" list, and an Instagram carousel for sharing.
-
-**What the evidence labels mean.** *tested*: we ran the commands and the output on the page is real. *partial*: some parts were run, the lesson says which not. *pending*: documentation and licence checked, our own run still to do. We would rather show a gap than hide it.
 
 ## Honest about what is open
 
