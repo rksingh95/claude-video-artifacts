@@ -9,7 +9,7 @@ function badge(l){
   if(l.os==='closed') return '<span class="pill closed">closed source · paid plan</span>';
   return '<span class="pill">no tool</span>';
 }
-function status(l){var s=STATUS[l.status];return s?'<span class="status '+s[0]+'" title="'+s[1]+'">'+s[0]+'</span>':''}
+function status(l){return ''}
 function block(b){
   if(b.p) return '<p>'+b.p+'</p>';
   if(b.h) return '<h2 style="margin-top:28px">'+b.h+'</h2>';
