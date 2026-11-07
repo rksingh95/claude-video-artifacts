@@ -5,7 +5,7 @@
 ### Learn to edit video with Claude and free, open-source tools.
 **A free beginner course. 15 lessons. Real commands, real outputs, honest limits.**
 
-[**Start the course →**](https://rksingh95.github.io/claude-video-artifacts/) &nbsp;·&nbsp; [**See the studio repo**](https://github.com/rksingh95/calude-video-studio) &nbsp;·&nbsp; Part of **100 Days of Practical AI** by [@imsikarwar.rahul](https://www.instagram.com/imsikarwar.rahul/)
+[**Start the course →**](https://rksingh95.github.io/claude-video-artifacts/) &nbsp;·&nbsp; [**See the studio repo**](https://github.com/rksingh95/calude-video-studio) &nbsp;·&nbsp; Made by [Rahul on GitHub](https://github.com/rksingh95) &nbsp;·&nbsp; Part of **100 Days of Practical AI** by [@imsikarwar.rahul](https://www.instagram.com/imsikarwar.rahul/)
 
 <img src="readme-assets/course-tour.gif" alt="Screen recording of the course site: lesson map, a lesson, and the Under the hood tab" width="260">
 
@@ -111,6 +111,20 @@ The full editing pipeline behind this course (render, QA and export scripts, eff
 
 Everything you need for the lessons is in this repo and in each tool's own repository, linked on every lesson.
 
+## Licence: how you may use this course
+
+- **Course text, site code and the scripts in `scripts/`** are released under the [MIT Licence](LICENSE). You may use, copy, change and share them, including commercially, as long as you keep the copyright and licence notice. They come **as is, without any warranty**.
+- **The photos and Reel covers** show the author. They are not covered by the MIT Licence; please do not reuse them as your own.
+- **The tools the lessons teach are not part of this licence.** Each one keeps its own licence (see the table above), and Claude is a commercial service under Anthropic's own terms.
+
+## Disclaimer: read the licences yourself
+
+This course is for learning. It is not legal advice, and the licence names in this course are a starting point, not a guarantee.
+
+- **Before you use any tool, read its licence yourself** and check it fits how you will use it, especially for commercial or client work. Some licences come with conditions, for example GPL-3.0 (Robust Video Matting) and GPL builds of FFmpeg have rules about sharing changed or bundled code. Licences and terms can change after this course was written.
+- **You are responsible for your own use**: of each open-source tool, of Claude and its usage policies, of any platform you upload to, and of any video you download or study (respect copyright and each site's terms).
+- **Check every output yourself.** AI can make mistakes; the whole course is about measuring the result before you publish. Nothing here promises views, followers or income.
+
 ## Credits and third-party licences
 
 - [FFmpeg](https://ffmpeg.org/), [faster-whisper](https://github.com/SYSTRAN/faster-whisper), [OpenAI Whisper](https://github.com/openai/whisper), [Robust Video Matting](https://github.com/PeterL1n/RobustVideoMatting), [HyperFrames](https://github.com/heygen-com/hyperframes), [Playwright](https://github.com/microsoft/playwright), [yt-dlp](https://github.com/yt-dlp/yt-dlp), [video-use](https://github.com/browser-use/video-use), and the face-effects pack by [Vibha Ramprakash](https://github.com/Vibha-Ramprakash/claude-video-effects). Each keeps its own licence; none of their code is copied into this repository.
@@ -122,4 +136,4 @@ Everything you need for the lessons is in this repo and in each tool's own repos
 Open an issue. A wrong command or licence is a bug in the course, and we will fix it and say so.
 
 ---
-<div align="center">Made by Rahul · 100 Days of Practical AI<br><a href="https://www.youtube.com/@practicetogetheral">YouTube</a> · <a href="https://www.instagram.com/imsikarwar.rahul/">Instagram</a> · <a href="https://www.facebook.com/rahulsankrit/">Facebook</a></div>
+<div align="center">Made by Rahul · 100 Days of Practical AI · MIT Licence<br><a href="https://github.com/rksingh95">GitHub</a> · <a href="https://www.youtube.com/@practicetogetheral">YouTube</a> · <a href="https://www.instagram.com/imsikarwar.rahul/">Instagram</a> · <a href="https://www.facebook.com/rahulsankrit/">Facebook</a></div>
