@@ -1,0 +1,21 @@
+L({id:'l05',n:5,title:'Remove the room behind you',tool:'Robust Video Matting',os:'open',license:'GPL-3.0',licenseUrl:'https://github.com/PeterL1n/RobustVideoMatting/blob/master/LICENSE',version:'RVM v1.0.0, model rvm_mobilenetv3_fp32.onnx (15.0 MB)',minutes:25,status:'pending',
+outcome:'You understand what a person matte is, how to check one, and when to skip it.',
+verified:['Licence is GPL-3.0 (LICENSE file read)','The release v1.0.0 has ONNX models: mobilenetv3 fp32 15.0 MB, fp16 7.5 MB, resnet50 fp16 53.8 MB, fp32 107.5 MB','The download link returns HTTP 200','The project documentation describes a downsample ratio for inference'],
+unverified:['We have NOT run RVM on a clip on this Mac for this course. A test earlier produced a clean matte on one frame in a different environment. Run steps are added after our own run','Quality on hair, glasses and hands in our footage'],
+sources:[['Robust Video Matting','https://github.com/PeterL1n/RobustVideoMatting'],['RVM inference documentation','https://github.com/PeterL1n/RobustVideoMatting/blob/master/documentation/inference.md'],['Release v1.0.0 (model files)','https://github.com/PeterL1n/RobustVideoMatting/releases/tag/v1.0.0']],
+beginner:[
+ {box:['note','Status of this lesson','The concept and the checks are final. The step-by-step commands are being added after we run the tool ourselves on a real clip, so you only get commands that worked.']},
+ {p:'A <b>matte</b> is a grey-scale picture the same size as your video. White means "this is the person", black means "this is the room", grey means "partly". With a matte, a tool can put a word behind you, dim the background or change it, without a green screen.'},
+ {p:'Robust Video Matting (RVM) is a free AI model that makes a matte for every frame of a video of a person. It remembers the previous frame, which keeps the edge from flickering.'},
+ {h:'The check before you use it'},
+ {ul:['<b>Hair</b>: strands should not flicker in and out','<b>Glasses</b>: lenses should not turn into holes','<b>Hands</b>: fingers should stay attached when you gesture','<b>Shoulders and chair</b>: no chair or wall bits left, no shoulder bitten off']},
+ {box:['check','The rule we use','Look at real frames from the whole clip, not one. If the matte does not hold in all four places, do not remove the room. Use a framed layout (your video in a card on a coloured background) instead. A clean frame layout looks better than a broken cut-out.']},
+ {box:['mistake','Common mistake','Judging the matte from a single good frame. Movement is where mattes fail. Check frames where you move your hands or turn your head.']},
+ {box:['note','Honest note on a Mac-only shortcut','On a Mac there is also Apple\'s Vision framework, which makes a person matte without any download. We used it in our own edits. It is part of macOS and is not open source, so it is not a course tool. RVM is the open-source route.']}
+],
+under:[
+ {table:[['Fact','Value'],[['Licence','GPL-3.0. If you build and distribute software that includes it, GPL obligations apply. Using the model to make a video for yourself is different from redistributing code'],['Model file','<code>rvm_mobilenetv3_fp32.onnx</code>, 15.0 MB, from release v1.0.0'],['Runtime','ONNX Runtime (we have 1.31.1 installed)'],['Inference setting','downsample ratio: the docs say the downsampled size should be between 256 and 512 pixels; for 1920x1080 input use 0.25 (480x270)'],['Output','foreground colours plus an alpha (matte) per frame']]]},
+ {p:'The model is recurrent: it passes state from frame to frame, so frames must be processed in order. In our studio the matte is stored as a raw grey-scale file and the render step reads it. The exact script is added after our run.'},
+ {p:'The second pending item is a licence note: the GPL-3.0 licence belongs to the code and model in the repository. We will state in the lesson exactly which files we use before launch.'}
+],
+carousel:[['Lesson 5','Remove the room without a green screen','Robust Video Matting, free and open'],['What it is','A black and white map of where you are'],['The 4 checks','Hair. Glasses. Hands. Shoulders.'],['The rule','If it breaks, do not use it'],['Alternative','A framed layout beats a broken cut-out'],['Full lesson','Link in bio']]});

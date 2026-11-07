@@ -1,0 +1,108 @@
+<div align="center">
+
+# Claude Video Studio
+
+### Learn to edit video with Claude and free, open-source tools.
+**A free beginner course. 15 lessons. Real commands, real outputs, honest limits.**
+
+[**Start the course →**](https://rksingh95.github.io/claude-video-studio/) &nbsp;·&nbsp; Part of **100 Days of Practical AI** by [@imsikarwar.rahul](https://www.instagram.com/imsikarwar.rahul/)
+
+<img src="readme-assets/course-tour.gif" alt="Screen recording of the course site: lesson map, a lesson, and the Under the hood tab" width="260">
+
+</div>
+
+---
+
+## Why this course exists
+
+Claude does not watch your video like a person. It reads a transcript, runs open-source tools to cut, caption and mix, and **measures the result with scripts**. This course teaches every one of those tools, one lesson each, so you know what is happening and can check it yourself.
+
+The first export of the Reel behind this course **failed its own checks**: captions about 0.27 s early on average, and a sound peak of -1.7 dBTP against a -2.0 limit. We measured both, fixed both, and version 2 passed. That is the course in one sentence: edit with AI, then check.
+
+<p align="center">
+  <img src="readme-assets/home.jpg" alt="Course home page on a phone" width="220">
+  &nbsp;&nbsp;
+  <img src="readme-assets/lesson-captions.jpg" alt="Lesson 4 on a phone" width="220">
+</p>
+
+## What you will learn
+
+| # | Lesson | Tool | Licence | Evidence |
+|---|---|---|---|---|
+| 0 | How Claude edits your video | the loop | n/a | tested |
+| 1 | Set up your studio | Claude Code | closed source, paid plan | partial |
+| 2 | Look inside a clip, cut it, straighten it | FFmpeg | LGPL / GPL | tested |
+| 3 | Turn speech into timed words | faster-whisper | MIT | tested |
+| 4 | Captions that read well | SRT + FFmpeg | see FFmpeg | tested |
+| 5 | Remove the room behind you | Robust Video Matting | GPL-3.0 | **pending** (not run yet) |
+| 6 | Motion graphics from plain HTML | HyperFrames | Apache-2.0 | partial |
+| 7 | Effects that follow your face | claude-video-effects | MIT | tested |
+| 8 | Cutting by reading the transcript | video-use helpers | MIT | partial |
+| 9 | Sound: speech first, loudness measured | FFmpeg audio filters | see FFmpeg | partial |
+| 10 | Real screen demos you can prove | Playwright | Apache-2.0 | tested |
+| 11 | Learn from videos without copying | yt-dlp | Unlicense | partial |
+| 12 | Check your video like a reviewer | ffprobe + scripts | MIT | tested |
+| 13 | Export for Instagram | FFmpeg (x264) | GPL build | partial |
+| 14 | Capstone: one Reel, start to finish | everything | n/a | partial |
+
+Every lesson has a **Beginner** tab and an **Under the hood** tab, a "Verified / Not verified" list, and an Instagram carousel for sharing.
+
+**What the evidence labels mean.** *tested*: we ran the commands and the output on the page is real. *partial*: some parts were run, the lesson says which not. *pending*: documentation and licence checked, our own run still to do. We would rather show a gap than hide it.
+
+## Honest about what is open
+
+Every editing tool in lessons 2 to 13 is open source and each lesson links its licence. **Claude itself is not open source and needs a paid plan or API account.** The official setup page lists the plans; lesson 1 says so too. Nothing else in the course costs money. Nothing here promises views or followers.
+
+## Made with pixel art and real recordings
+
+The two promo Reels for this course are faceless: the pixel art is drawn by code, the screen windows are real recordings of this site.
+
+<p align="center">
+  <img src="readme-assets/pixel-art.png" alt="Twelve pixel-art sprites: scissors, hourglass, film strip, laptop, warning, check, cross, spark, clock, play, gear, arrow" width="640">
+</p>
+<p align="center">
+  <img src="readme-assets/promo-by-hand.jpg" alt="Promo Reel cover: Still cutting your videos by hand?" width="200">
+  &nbsp;&nbsp;
+  <img src="readme-assets/promo-free-tools.jpg" alt="Promo Reel cover: You don't need an expensive editor" width="200">
+</p>
+
+## Run it yourself
+
+The course is a static site (plain HTML, CSS and JavaScript, no build step).
+
+```bash
+git clone https://github.com/rksingh95/claude-video-studio.git
+cd claude-video-studio
+python3 -m http.server 8000      # then open http://localhost:8000
+```
+
+Opening `index.html` directly also works.
+
+### Scripts used in lessons 12 and 13
+
+`scripts/` holds three small Python scripts that need only Python 3 and FFmpeg/ffprobe on your PATH:
+
+| Script | What it does |
+|---|---|
+| `scripts/spec_check.py` | checks an MP4 against the Instagram Reel specs we recorded (read-only) |
+| `scripts/pacing_check.py` | reports when the picture changes and the longest still stretch |
+| `scripts/hq_export.py` | one high-quality H.264/AAC export with the settings from lesson 13 |
+
+The Instagram numbers inside `spec_check.py` are our reading of Instagram's help pages and API notes. They can change.
+
+## Want the whole studio?
+
+The full editing pipeline behind this course (render, QA and export scripts, effects wiring) lives in our studio repository. **It is private for now** while we clean it for release; this section will link it when it is public. Everything you need for the lessons is in this repo and in each tool's own repository, linked on every lesson.
+
+## Credits and third-party licences
+
+- [FFmpeg](https://ffmpeg.org/), [faster-whisper](https://github.com/SYSTRAN/faster-whisper), [OpenAI Whisper](https://github.com/openai/whisper), [Robust Video Matting](https://github.com/PeterL1n/RobustVideoMatting), [HyperFrames](https://github.com/heygen-com/hyperframes), [Playwright](https://github.com/microsoft/playwright), [yt-dlp](https://github.com/yt-dlp/yt-dlp), [video-use](https://github.com/browser-use/video-use), and the face-effects pack by [Vibha Ramprakash](https://github.com/Vibha-Ramprakash/claude-video-effects). Each keeps its own licence; none of their code is copied into this repository.
+- Course text, site code and the three scripts: MIT (see `LICENSE`).
+- The photos in the lessons and the Reel covers show the author. Please do not reuse them as your own.
+
+## Found a mistake?
+
+Open an issue. A wrong command or licence is a bug in the course, and we will fix it and say so.
+
+---
+<div align="center">Made by <a href="https://www.instagram.com/imsikarwar.rahul/">Rahul</a> · 100 Days of Practical AI</div>

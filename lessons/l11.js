@@ -1,0 +1,19 @@
+L({id:'l11',n:11,title:'Learn from videos you like, without copying',tool:'yt-dlp + FFmpeg frames',os:'open',license:'Unlicense (public domain)',licenseUrl:'https://github.com/yt-dlp/yt-dlp/blob/master/LICENSE',version:'yt-dlp 2026.10.26',minutes:20,status:'partial',
+outcome:'You break a reference video into frames and words to learn its mechanics, and you know where to stop.',
+verified:['Licence text read from the repository (public-domain dedication) and from the installed package metadata','yt-dlp version and option names checked from the installed program on 7 Nov 2026','The frame extraction command was run on a real clip: 12 frames from a 12 s clip'],
+unverified:['We did not download a video today. Earlier studio work found: single public post links work without a login, profile pages do not','Whether you are allowed to download a given video depends on the site\'s terms and your local law. We do not know yours'],
+sources:[['yt-dlp on GitHub','https://github.com/yt-dlp/yt-dlp']],
+beginner:[
+ {p:'When a Reel works well, you can find out why by looking at its parts: how often the picture changes, where the text sits, what the first words are. You study the mechanics. You never copy their words, pictures or branding.'},
+ {box:['note','Rules we follow','Only look at videos you are allowed to download. Study mechanics only. Never reuse another creator\'s footage, text, music or logo. Never log in with your own account cookies for this. If a site blocks it, stop.']},
+ {step:['1','Get one video you may use','yt-dlp is a free program that downloads a video from a link you give it. It was updated for our Mac to version 2026.10.26.',[{prompt:['Terminal','.venv/bin/yt-dlp --no-playlist -o "work/ref.%(ext)s" "<link to one public video>"']}]]},
+ {step:['2','Turn it into frames','One picture per second shows you the rhythm of cuts and text.',[{prompt:['Terminal','mkdir -p work/frames\nffmpeg -i work/ref.mp4 -vf "fps=1,scale=360:-1" work/frames/%03d.jpg']},{p:'On our 12 second test clip this wrote 12 pictures.'}]]},
+ {step:['3','Get the words (lesson 3) and ask a question, not for a copy',null,[{prompt:['Prompt to Claude','Look at the frames in work/frames and the transcript. Describe only the mechanics: how often the picture changes in the first 5 seconds, where on-screen text sits, how long each text stays, and how the first sentence is built. Do not reuse any wording.']}]]},
+ {box:['mistake','Common mistake','Counting what you saw once as a rule. One video is one example. We write findings down with a label: "observed in this video" is not "works".']}
+],
+under:[
+ {table:[['Option','Meaning'],[['<code>--no-playlist</code>','download only the video, not a whole playlist'],['<code>-o TEMPLATE</code>','output file name, e.g. <code>work/ref.%(ext)s</code>'],['<code>-f FORMAT</code>','choose a format'],['<code>--write-subs</code>, <code>--write-auto-subs</code>','also save subtitles if the site offers them']]]},
+ {box:['mistake','Environment trap we hit','The Homebrew copy of yt-dlp was broken on our Mac because the Python it uses lacked a required library. We ran yt-dlp from a project virtual environment instead (<code>.venv/bin/yt-dlp</code>).']},
+ {p:'In our studio a "Watch" skill wraps this: it downloads, extracts frames with FFmpeg and gets a transcript with local Whisper. We always run it in local mode so that no video or audio is uploaded to an AI service.'}
+],
+carousel:[['Lesson 11','Learn from a Reel. Never copy it.','yt-dlp + FFmpeg, free and open'],['Step 1','Get one video you may use'],['Step 2','One frame per second'],['Step 3','Ask about mechanics, not wording'],['Rule','One example is not a rule'],['Full lesson','Link in bio']]});
