@@ -20,6 +20,6 @@ beginner:[
 under:[
  {p:'File layout we use per video:'},
  {prompt:['Folder layout','my-reel/\n  CLAUDE.md          your rules\n  raw/               originals, never changed\n  work/              normalised clip, WAV, transcripts, stills\n  exports/           reel-v1.mp4, reel-v1.sha256, reel-v1.srt\n  qa/                report for each exported version']},
- {p:'The full stage runner in our <a href="https://github.com/rksingh95/calude-video-studio" target="_blank" rel="noopener">studio repo</a> is <code>tools/video/reel_pipeline.py</code> with the stages prepare, transcribe, segment, render, audio, export and qa. It is built for our own folders and settings, so it will not run unchanged on yours. In this course you build the same steps yourself, one lesson at a time, so you know what each does.'}
+ {p:'The full stage runner in our private studio repo is <code>tools/video/reel_pipeline.py</code> with the stages prepare, transcribe, segment, render, audio, export and qa. It is built for our own folders and settings, so it will not run unchanged on yours. In this course you build the same steps yourself, one lesson at a time, so you know what each does.'}
 ],
 carousel:[['Lesson 14','Edit one Reel start to finish','The whole course in 9 steps'],['Steps 1 to 3','Set up. Straighten. Words and cuts.'],['Steps 4 to 6','Captions. One effect. Sound.'],['Steps 7 to 9','Preview. Export and check. You decide.'],['Expect this','Version 1 will fail something'],['Start free','Link in bio']]});

@@ -5,7 +5,7 @@
 ### Learn to edit video with Claude and free, open-source tools.
 **A free beginner course. 15 lessons. Real commands, real outputs, honest limits.**
 
-[**Start the course →**](https://rksingh95.github.io/claude-video-artifacts/) &nbsp;·&nbsp; [**See the studio repo**](https://github.com/rksingh95/calude-video-studio) &nbsp;·&nbsp; Made by [Rahul on GitHub](https://github.com/rksingh95) &nbsp;·&nbsp; Part of **100 Days of Practical AI** by [@imsikarwar.rahul](https://www.instagram.com/imsikarwar.rahul/)
+[**Start the course →**](https://rksingh95.github.io/claude-video-artifacts/) &nbsp;·&nbsp; Made by [Rahul on GitHub](https://github.com/rksingh95) &nbsp;·&nbsp; Part of **100 Days of Practical AI** by [@imsikarwar.rahul](https://www.instagram.com/imsikarwar.rahul/)
 
 <img src="readme-assets/course-tour.gif" alt="Screen recording of the course site: lesson map, a lesson, and the Under the hood tab" width="260">
 
@@ -105,11 +105,7 @@ The Instagram numbers inside `spec_check.py` are our reading of Instagram's help
 
 ## Want the whole studio?
 
-The full editing pipeline behind this course (render, QA and export scripts, effects wiring, skills and real episode evidence) lives in the studio repository:
-
-**[rksingh95/calude-video-studio](https://github.com/rksingh95/calude-video-studio)**: the working studio that produced the Reels this course is built on.
-
-Everything you need for the lessons is in this repo and in each tool's own repository, linked on every lesson.
+The full editing pipeline behind this course (render, QA and export scripts, effects wiring and episode evidence) is a private working studio. Numbers quoted from it in the lessons are marked as private studio records. Everything you need for the lessons is in this repo and in each tool's own repository, linked on every lesson.
 
 ## Licence: how you may use this course
 

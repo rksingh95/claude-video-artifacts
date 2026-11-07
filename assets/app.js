@@ -45,7 +45,7 @@ function view(l){
   return '<div class="crumb"><a href="#home">Course</a> / Lesson '+l.n+'</div>'+
   '<div class="lesson-head"><div class="meta">'+badge(l)+status(l)+'<span class="pill">'+l.minutes+' min</span><span class="pill">Tool: '+l.tool+'</span></div><h1>'+l.title+'</h1><p class="lede">Outcome: '+l.outcome+'</p><div class="meta"><button type="button" id="shareBtn">Copy share link</button><button type="button" id="doneBtn">'+(DONE[l.id]?'Marked done':'Mark as done')+'</button></div></div>'+
   '<div class="tabs" role="tablist"><button role="tab" type="button" data-tab="beginner" aria-selected="'+(tab==='beginner')+'">Beginner</button><button role="tab" type="button" data-tab="under" aria-selected="'+(tab==='under')+'">Under the hood</button></div>'+
-  '<div class="grid2"><div>'+(tab==='beginner'?l.beginner:l.under).map(block).join('')+'<div class="box srcs"><div class="lab">Sources</div><ul class="vlist">'+(l.sources||[]).map(function(s){return '<li><a href="'+s[1]+'" target="_blank" rel="noopener">'+s[0]+'</a></li>'}).join('')+'</ul></div></div><aside class="side">'+side+'</aside></div>'+
+  '<div class="grid2"><div>'+(tab==='beginner'?l.beginner:l.under).map(block).join('')+'<div class="box srcs"><div class="lab">Sources</div><ul class="vlist">'+(l.sources||[]).map(function(s){return s[1]?'<li><a href="'+s[1]+'" target="_blank" rel="noopener">'+s[0]+'</a></li>':'<li>'+s[0]+'</li>'}).join('')+'</ul></div></div><aside class="side">'+side+'</aside></div>'+
   slides(l.carousel)+
   '<div class="nav">'+(prev?'<a class="btn" href="#'+prev.id+'">← '+prev.title+'</a>':'<span></span>')+(next?'<a class="btn primary" href="#'+next.id+'">'+next.title+' →</a>':'')+'</div>'
 }
