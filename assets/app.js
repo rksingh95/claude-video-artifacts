@@ -56,7 +56,7 @@ function render(){
   document.title=(l?l.title+' · ':'')+'Claude Video Studio';
   window.scrollTo(0,0);
 }
-document.getElementById('foot').innerHTML='Free and open. Made by '+C.author+'. Every command in this course was run on a Mac in '+'November 2026 unless the status badge on that lesson says otherwise. Last updated '+C.updated+'.';
+document.getElementById('foot').innerHTML='Free and open. Made by '+C.author+'. <a href="https://www.youtube.com/@practicetogetheral" target="_blank" rel="noopener">YouTube</a> · <a href="https://www.instagram.com/imsikarwar.rahul/" target="_blank" rel="noopener">Instagram</a> · <a href="https://www.facebook.com/rahulsankrit/" target="_blank" rel="noopener">Facebook</a>. Every command in this course was run on a Mac in '+'November 2026 unless the status badge on that lesson says otherwise. Last updated '+C.updated+'.';
 function toast(m){var t=document.getElementById('toast');t.textContent=m;t.hidden=false;setTimeout(function(){t.hidden=true},1600)}
 function copy(text,msg){
   function fb(){var ta=document.createElement('textarea');ta.value=text;document.body.appendChild(ta);ta.select();try{document.execCommand('copy');toast(msg)}catch(e){toast('Select and copy manually')}ta.remove()}

@@ -13,6 +13,20 @@
 
 ---
 
+## Follow the series
+
+New lessons, Reels and carousels land on all three. Pick the one you use.
+
+<p align="center">
+  <a href="https://www.youtube.com/@practicetogetheral"><img src="readme-assets/follow.gif" alt="Follow the series: YouTube @practicetogetheral, Instagram @imsikarwar.rahul, Facebook rahulsankrit" width="520"></a>
+</p>
+
+<p align="center">
+  <a href="https://www.youtube.com/@practicetogetheral"><b>YouTube</b></a> &nbsp;·&nbsp;
+  <a href="https://www.instagram.com/imsikarwar.rahul/"><b>Instagram</b></a> &nbsp;·&nbsp;
+  <a href="https://www.facebook.com/rahulsankrit/"><b>Facebook</b></a>
+</p>
+
 ## Why this course exists
 
 Claude does not watch your video like a person. It reads a transcript, runs open-source tools to cut, caption and mix, and **measures the result with scripts**. This course teaches every one of those tools, one lesson each, so you know what is happening and can check it yourself.
@@ -103,4 +117,4 @@ The full editing pipeline behind this course (render, QA and export scripts, eff
 Open an issue. A wrong command or licence is a bug in the course, and we will fix it and say so.
 
 ---
-<div align="center">Made by <a href="https://www.instagram.com/imsikarwar.rahul/">Rahul</a> · 100 Days of Practical AI</div>
+<div align="center">Made by Rahul · 100 Days of Practical AI<br><a href="https://www.youtube.com/@practicetogetheral">YouTube</a> · <a href="https://www.instagram.com/imsikarwar.rahul/">Instagram</a> · <a href="https://www.facebook.com/rahulsankrit/">Facebook</a></div>
