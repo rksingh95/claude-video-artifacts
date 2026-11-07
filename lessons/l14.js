@@ -1,6 +1,6 @@
 L({id:'l14',n:14,title:'Capstone: edit one Reel start to finish',tool:'Everything in this course',os:'none',minutes:90,status:'partial',
 outcome:'You take one phone clip through all the stages, with a check after each, and end with a file you can approve.',
-verified:['The stage order is the one we used for Reel 028: 7 clips, 76.65 s raw, 29.3 s final, version 2 passed our checks','Every command in the linked lessons is marked tested or partial on its own lesson page'],
+verified:['The stage order is the one we used for Reel 028: 7 clips, 76.65 s raw, 29.3 s final, the final version passed our checks','Every command in the linked lessons is marked tested or partial on its own lesson page'],
 unverified:['A beginner has not yet followed this capstone start to finish: we will test it on a first-time user before launch','Time for you: unknown. We do not know how long a beginner needs','No promise about views or followers'],
 sources:[['Lessons 2 to 13 in this course','#home']],
 beginner:[
@@ -13,7 +13,7 @@ beginner:[
  {step:['6','Sound',null,[{ul:['Clean the voice, music under it, measure (lesson 9)']},{box:['check','Check','About -16 LUFS, true peak at most -2.0 dBTP']}]]},
  {step:['7','Export and review',null,[{ul:['One export (lesson 13), then every check in lesson 12, then a hash']},{box:['check','Check','The QA report lists what you did NOT check']}]]},
  {step:['8','You decide','Watch it on your phone with sound. Listen once with headphones. You approve, or you ask for version 2. Claude never posts for you.']},
- {box:['real','What happened in our real run','Version 1 of Reel 028 failed two of our own checks (captions about 0.27 s early on average, sound peak -1.7 dBTP against a -2.0 limit). We fixed both and version 2 passed, with the largest caption offset at 0.08 s and the peak at -3.1 dBTP. Expect your first version to fail something. That is the point of the checks.']}
+ {box:['real','What happened in our real run','An early export of Reel 028 failed two of our own checks (captions about 0.27 s early on average, sound peak -1.7 dBTP against a -2.0 limit). We fixed both and the final version passed, with the largest caption offset at 0.08 s and the peak at -3.1 dBTP. Expect your first version to fail something. That is the point of the checks.']}
 ],
 under:[
  {p:'File layout we use per video:'},

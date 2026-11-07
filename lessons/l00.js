@@ -11,7 +11,7 @@ beginner:[
  {step:['4','Claude checks, you approve','Scripts test the exact exported file. You watch and listen. Claude never posts for you. (Lessons 12 and 13)']},
  {h:'A real example'},
  {p:'Reel 028 was edited this way. Seven phone clips, 76.65 seconds of raw talking, became a 29.3 second Reel.'},
- {box:['mistake','The first export failed our own checks','Version 1 had captions that ran about 0.27 s early on average (31 of 35 captions), and the sound peaked at -1.7 dBTP when our limit is -2.0. We found both with measurements, fixed them, and version 2 passed. This is why the course teaches checking, not only editing.']},
+ {box:['mistake','The first export failed our own checks','An early export had captions that ran about 0.27 s early on average (31 of 35 captions), and the sound peaked at -1.7 dBTP when our limit is -2.0. We found both with measurements, fixed them, and the final version passed. This is why the course teaches checking, not only editing.']},
  {h:'What "great quality" means here'},
  {ul:['A clear hook in the first words','Captions you can read and that match the speech','Speech louder than music, no clipping','Anything shown as a demo really happened','A file Instagram accepts, checked by tools','A human watch and listen before posting']},
  {box:['mistake','Common mistake','Asking Claude to "make it viral". Nobody can promise that. Ask for things that can be done and measured: "cut the long pauses, add captions, keep speech at about -16 LUFS".']}

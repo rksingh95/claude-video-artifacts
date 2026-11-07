@@ -1,6 +1,6 @@
 L({id:'l04',n:4,title:'Captions that read well',tool:'SRT files + FFmpeg (libass)',os:'open',license:'FFmpeg: see lesson 2',licenseUrl:'https://ffmpeg.org/legal.html',version:'FFmpeg 9.0.2 with libass',minutes:25,status:'tested',
 outcome:'You make a caption file from the transcript, burn it onto the video, and check that it matches the speech.',
-verified:['The SRT script and the burn command were run on 7 Nov 2026; the frame below is real','Caption checks quoted from our own QA of Reel 028 v1 and v2'],
+verified:['The SRT script and the burn command were run on 7 Nov 2026; the frame below is real','Caption checks quoted from our own QA files for Reel 028 (early export, v1 and v2)'],
 unverified:['The explanation for why MarginV=300 hid the captions (we saw that 300 hid them and 70 showed them; the coordinate-space reason is our reading of libass behaviour)','Readability on every phone model'],
 sources:[['FFmpeg subtitles filter','https://ffmpeg.org/ffmpeg-filters.html#subtitles-1'],['SubRip (SRT) format description','https://en.wikipedia.org/wiki/SubRip']],
 beginner:[
@@ -10,7 +10,7 @@ beginner:[
  {box:['mistake','Look at cue 4','"CAPTIONED IT ADDED" splits the sentence in the wrong place. Cutting every three words is simple and wrong. Ask Claude to break captions at phrases and pauses, two or three words each, and never to leave a cue on screen for less than about 0.3 seconds.']},
  {step:['2','Burn them onto the video','The <code>subtitles</code> filter draws the SRT onto the picture.',[{prompt:['Terminal','ffmpeg -i work/clip-norm.mp4 -vf "subtitles=work/clip.srt:force_style=\'FontName=Arial,FontSize=18,Bold=1,Alignment=2,MarginV=70,Outline=3\'" -c:v libx264 -crf 18 -pix_fmt yuv420p -c:a copy work/clip-captioned.mp4']},{img:['assets/img/l04-caption-burned.jpg','A frame from a captioned test clip with the caption MY REAL VOICE over a red sweatshirt','Real frame from the test above: the caption sits over the chest, clear of the face.']}]]},
  {step:['3','Check the timing, do not trust it',null,[{prompt:['Prompt to Claude','Compare every caption start time in work/clip.srt with the start time of the first word it contains, using the faster-whisper word timestamps. Report the largest difference and any caption shorter than 0.3 seconds.']}]]},
- {box:['real','What went wrong in our Reel','Reel 028 version 1 failed this check: captions ran about 0.27 s early on average, and between 15.3 and 19.6 s they lagged the speech by 0.7 to 1.3 s. After the fix, version 2 measured a largest offset of 0.08 s over all 36 captions, and the shortest caption was 0.32 s.']},
+ {box:['real','What went wrong in our Reel','An early export of Reel 028 failed this check: captions ran about 0.27 s early on average. The next file we reviewed still had a stretch from 15.3 to 19.6 s where captions lagged the speech by 0.7 to 1.3 s. After the fixes, the final version measured a largest offset of 0.08 s over all 36 captions, and the shortest caption was 0.32 s.']},
  {box:['mistake','Common mistake','Putting captions over the face, or too low where the Instagram buttons cover them. Look at real frames, not only the file.']}
 ],
 under:[
@@ -18,4 +18,4 @@ under:[
  {table:[['Our caption check','Result on Reel 028 v2'],[['Cues','36'],['Shortest cue','0.32 s (rule: at least about 0.3 s)'],['Largest start offset vs Whisper word','0.08 s'],['Cues above 3 words per second','22 of 36 (flagged, matches how fast the speaker talks)']]]},
  {p:'Build the check as a script, not a feeling: read the SRT, read the word times, compare. Our version is part of the QA lesson (12).'}
 ],
-carousel:[['Lesson 4','Captions that match your voice','SRT + FFmpeg. Free and open.'],['Step 1','Words with times become an SRT'],['Step 2','Burn it in with one command'],['Real result','Our v1 captions ran 0.27 s early','v2 offset: 0.08 s'],['Mistake','Cutting every 3 words splits sentences'],['Full lesson','Link in bio']]});
+carousel:[['Lesson 4','Captions that match your voice','SRT + FFmpeg. Free and open.'],['Step 1','Words with times become an SRT'],['Step 2','Burn it in with one command'],['Real result','Our early export ran 0.27 s early','Final cut: 0.08 s off'],['Mistake','Cutting every 3 words splits sentences'],['Full lesson','Link in bio']]});
