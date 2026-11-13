@@ -10,6 +10,18 @@
 <meta property="og:type" content="website">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;800&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
 <link rel="stylesheet" href="assets/style.css">
+<style>
+.start-here{margin:24px 0 0;background:#101827;color:#F7F5F0;border-radius:16px;padding:22px 20px;border-left:8px solid #2DD4BF}
+.start-here .sh-kicker{display:inline-block;font:600 12px/1 var(--body);letter-spacing:.06em;text-transform:uppercase;background:#2DD4BF;color:#101827;padding:6px 10px;border-radius:99px}
+.start-here h2{font:800 clamp(24px,4.4vw,36px)/1.12 var(--display);margin:12px 0 8px;color:#F7F5F0}
+.start-here h2 a{text-decoration:none}
+.start-here h2 a:hover{text-decoration:underline}
+.start-here p{margin:0 0 16px;color:#C9D3E0;max-width:60ch}
+.start-here .sh-btn{background:#2DD4BF;color:#101827;border-color:#2DD4BF;font-weight:600}
+.start-here a:focus-visible{outline-color:#2DD4BF}
+.sh-also{margin:20px 0 0;font:500 13px var(--mono);color:var(--muted)}
+.start-here[hidden],.sh-also[hidden]{display:none}
+</style>
 </head>
 <body>
 <div class="wrap">
@@ -17,6 +29,13 @@
     <a class="brand" href="#home"><i></i>Claude Video Studio <small>100 Days of Practical AI</small></a>
     <div class="bar-right"><span class="pill" id="prog"></span><button id="themeBtn" type="button">Theme</button></div>
   </header>
+  <section class="start-here" id="startHere" aria-labelledby="startHereTitle">
+    <span class="sh-kicker">Start here · free</span>
+    <h2 id="startHereTitle"><a href="roadmap/">AI Engineer Roadmap from a hiring manager</a></h2>
+    <p>Seven stages for 2026, what I actually check in a CV and an interview at each one, and free resources only. No sign-up.</p>
+    <a class="btn sh-btn" href="roadmap/">Open the roadmap →</a>
+  </section>
+  <p class="sh-also" id="startHereAlso">Also free: the video editing course below.</p>
   <main id="app"></main>
   <footer class="foot" id="foot"></footer>
 </div>
@@ -29,5 +48,8 @@
 <script src="lessons/l09.js"></script><script src="lessons/l10.js"></script><script src="lessons/l11.js"></script>
 <script src="lessons/l12.js"></script><script src="lessons/l13.js"></script><script src="lessons/l14.js"></script>
 <script src="assets/app.js"></script>
+<script>
+(function(){function sh(){var h=location.hash,home=!h||h==='#home';document.getElementById('startHere').hidden=!home;document.getElementById('startHereAlso').hidden=!home}sh();window.addEventListener('hashchange',sh)})();
+</script>
 </body>
 </html>

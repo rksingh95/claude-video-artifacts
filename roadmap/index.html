@@ -1,0 +1,372 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>AI Engineer Roadmap</title>
+<meta name="description" content="A free AI engineer roadmap for 2026, written by an Engineering Manager who screens CVs: 7 stages, what a hiring manager actually checks at each one, and free resources from official sources.">
+<meta property="og:title" content="AI Engineer Roadmap: what a hiring manager actually checks">
+<meta property="og:description" content="7 stages, the signals I look for in a CV and an interview, and free resources only. Honest Version, by Rahul.">
+<meta property="og:type" content="article">
+<meta name="color-scheme" content="light dark">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&display=swap">
+<style>
+:root{
+  --ground:#F7F5F0; --surface:#FFFDF9; --ink:#101827; --muted:#465063; --line:#E2DED4;
+  --mint:#2DD4BF; --coral:#FF6B6B; --hi:#FFD400; --on-fill:#101827;
+  --mint-soft:#D5F6F1; --coral-soft:#FFE3E1;
+  --sans:'Inter',system-ui,-apple-system,'Segoe UI',sans-serif; --serif:'Instrument Serif',Georgia,serif;
+  color-scheme:light;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --ground:#101827; --surface:#172133; --ink:#F7F5F0; --muted:#98A9BF; --line:#26324A;
+  --mint-soft:#123A3C; --coral-soft:#3A2230; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --ground:#101827; --surface:#172133; --ink:#F7F5F0; --muted:#98A9BF; --line:#26324A;
+  --mint-soft:#123A3C; --coral-soft:#3A2230; color-scheme:dark}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+body{margin:0;background:var(--ground);color:var(--ink);font:400 17px/1.6 var(--sans);
+  padding:0 max(16px,env(safe-area-inset-right,0px)) 0 max(16px,env(safe-area-inset-left,0px));overflow-wrap:break-word}
+a{color:inherit;text-decoration-thickness:1px;text-underline-offset:3px}
+a:hover{text-decoration-thickness:2px}
+a:focus-visible,summary:focus-visible{outline:3px solid var(--mint);outline-offset:2px;border-radius:4px}
+.skip{position:absolute;left:-9999px;top:8px;background:var(--ink);color:var(--ground);padding:8px 12px;border-radius:8px;z-index:9}
+.skip:focus{left:16px}
+.wrap{max-width:880px;margin:0 auto}
+header.top{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:16px 0;border-bottom:1px solid var(--line);flex-wrap:wrap}
+.brand{font:600 15px/1.2 var(--sans);text-decoration:none;display:flex;align-items:center;gap:8px}
+.brand i{width:12px;height:12px;border-radius:3px;background:var(--mint);display:inline-block}
+.brand em{font:italic 400 18px var(--serif)}
+.top nav a{font-size:14px;color:var(--muted)}
+.hero{padding:40px 0 8px}
+.kicker{display:inline-block;font:600 12px/1 var(--sans);letter-spacing:.06em;text-transform:uppercase;background:var(--mint);color:var(--on-fill);padding:6px 10px;border-radius:99px}
+h1{font:700 clamp(36px,7vw,60px)/1.02 var(--sans);letter-spacing:-.03em;margin:16px 0 8px;text-wrap:balance}
+h1 .s{display:block;font:italic 400 clamp(30px,5.6vw,50px)/1.1 var(--serif);letter-spacing:-.01em;margin-top:6px}
+.lede{font-size:19px;color:var(--muted);max-width:60ch;margin:16px 0 0}
+.mark{background:linear-gradient(transparent 55%,var(--hi) 55%);color:inherit;padding:0 2px}
+:root[data-theme="dark"] .mark{background:var(--hi);color:#101827}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .mark{background:var(--hi);color:#101827}}
+.who{display:grid;grid-template-columns:auto minmax(0,1fr);gap:14px;align-items:start;background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:18px;margin:28px 0 0}
+.who .av{width:44px;height:44px;border-radius:50%;background:var(--ink);color:var(--ground);display:grid;place-items:center;font:italic 400 24px var(--serif)}
+.who p{margin:0}
+.who p+p{margin-top:6px;color:var(--muted);font-size:15px}
+.note{border-left:4px solid var(--hi);padding:10px 14px;margin:20px 0 0;background:var(--surface);border-radius:0 12px 12px 0;font-size:15px}
+.jump{display:flex;flex-wrap:wrap;gap:8px;margin:28px 0 0;padding:0;list-style:none}
+.jump a{display:inline-block;font-size:14px;text-decoration:none;border:1px solid var(--line);background:var(--surface);padding:6px 12px;border-radius:99px}
+.jump a:hover{border-color:var(--ink)}
+h2{font:700 clamp(26px,4.4vw,34px)/1.15 var(--sans);letter-spacing:-.02em;margin:0 0 8px;text-wrap:balance}
+h2 em{font:italic 400 1.1em var(--serif);letter-spacing:0}
+.sec{padding:56px 0 0}
+.sec>p.sub{color:var(--muted);margin:0 0 24px;max-width:62ch}
+/* roadmap timeline */
+ol.road{list-style:none;margin:0;padding:0;position:relative}
+ol.road::before{content:"";position:absolute;left:19px;top:8px;bottom:8px;width:2px;background:var(--line)}
+.stage{position:relative;padding:0 0 32px 56px}
+.stage .num{position:absolute;left:0;top:0;width:40px;height:40px;border-radius:50%;background:var(--ink);color:var(--ground);display:grid;place-items:center;font:700 16px var(--sans)}
+.stage:last-child .num{background:var(--mint);color:var(--on-fill)}
+.stage h3{font:700 22px/1.25 var(--sans);margin:6px 0 6px;letter-spacing:-.01em}
+.stage .learn{margin:0 0 14px;color:var(--muted)}
+.cols{display:grid;grid-template-columns:minmax(0,1fr);gap:12px}
+@media (min-width:820px){.cols{grid-template-columns:minmax(0,1.35fr) minmax(0,1fr)}}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:16px}
+.lab{display:inline-block;font:600 12px/1 var(--sans);letter-spacing:.05em;text-transform:uppercase;padding:5px 9px;border-radius:6px;margin:0 0 10px}
+.lab.check{background:var(--mint);color:var(--on-fill)}
+.lab.free{background:transparent;border:1px solid var(--line);color:var(--muted)}
+.lab.miss{background:var(--coral);color:var(--on-fill)}
+.card ul{margin:0;padding-left:20px}
+.card li{margin:0 0 8px}
+.card li:last-child{margin-bottom:0}
+.res li{list-style:none;margin-left:-20px}
+.res a{font-weight:600}
+.res span{display:block;font-size:14px;color:var(--muted)}
+.check-card{border-color:var(--mint);background:var(--mint-soft)}
+.mine{font-size:13px;color:var(--muted);margin:10px 0 0;font-style:italic}
+/* CV section */
+.cv{display:grid;gap:12px;grid-template-columns:minmax(0,1fr)}
+@media (min-width:820px){.cv{grid-template-columns:repeat(3,minmax(0,1fr))}}
+.cv .card b.n{display:block;font:italic 400 34px/1 var(--serif);margin-bottom:6px}
+.src{font-size:14px;color:var(--muted);margin:16px 0 0}
+.lines{display:grid;gap:12px;margin:16px 0 0}
+.line{border-radius:14px;padding:14px 16px;border:1px solid var(--line);background:var(--surface)}
+.line .lab{margin-bottom:8px}
+.line p{margin:0;font-family:ui-monospace,'SF Mono',Menlo,monospace;font-size:14.5px;line-height:1.55}
+.line.weak{background:var(--coral-soft);border-color:var(--coral)}
+.line.strong{background:var(--mint-soft);border-color:var(--mint)}
+.verdict{margin:20px 0 0;font:italic 400 clamp(26px,4.6vw,34px)/1.2 var(--serif)}
+.verdict b{font:700 .62em var(--sans);letter-spacing:.06em;text-transform:uppercase;vertical-align:middle;margin-right:8px}
+/* mistakes */
+ol.miss{list-style:none;padding:0;margin:0;display:grid;gap:10px;counter-reset:m}
+ol.miss li{counter-increment:m;display:grid;grid-template-columns:32px minmax(0,1fr);gap:12px;background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:14px 16px}
+ol.miss li::before{content:counter(m);width:28px;height:28px;border-radius:50%;background:var(--coral);color:var(--on-fill);display:grid;place-items:center;font:700 14px var(--sans)}
+ol.miss b{display:block}
+ol.miss span{color:var(--muted);font-size:15.5px}
+footer{margin:64px 0 0;padding:24px 0 40px;border-top:1px solid var(--line);font-size:15px;color:var(--muted)}
+footer .sig{font:italic 400 26px var(--serif);color:var(--ink);margin:0 0 8px}
+footer p{margin:0 0 8px;max-width:66ch}
+.ig{display:inline-flex;align-items:center;gap:8px;font-weight:600;color:var(--ink);text-decoration:none;border:1px solid var(--ink);padding:10px 16px;border-radius:99px;margin:8px 0 16px}
+.ig:hover{background:var(--ink);color:var(--ground)}
+@media print{.jump,.skip{display:none}body{background:#fff}.stage{break-inside:avoid}}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to the roadmap</a>
+<div class="wrap">
+<header class="top">
+  <a class="brand" href="./"><i aria-hidden="true"></i><span><em>Honest Version</em> · Rahul</span></a>
+  <nav aria-label="Site"><a href="../">All free resources</a></nav>
+</header>
+
+<main id="main">
+<section class="hero" aria-labelledby="title">
+  <span class="kicker">Free · 2026 edition</span>
+  <h1 id="title">AI Engineer Roadmap <span class="s">what a hiring manager actually checks</span></h1>
+  <p class="lede">Most roadmaps tell you what to study. This one also tells you what I look for when your CV lands on my side of the table. Seven stages, the signals I check at each one, and free resources only.</p>
+
+  <div class="who">
+    <div class="av" aria-hidden="true">R</div>
+    <div>
+      <p>I'm Rahul. I studied mechanical engineering in India, switched to software in 2016, did a Master's in Germany, and went from engineer to senior to Engineering Manager over 10+ years in software.</p>
+      <p>I screen CVs and sit on interview panels. I also worked on AI as a student developer, before ChatGPT made it a headline.</p>
+    </div>
+  </div>
+
+  <p class="note"><b>Honest version?</b> Everything under "What I check" is my view, from the interviews I've been part of. It is not a rule for every company, and no roadmap, including this one, can promise you a job.</p>
+
+  <nav aria-label="Stages">
+    <ul class="jump">
+      <li><a href="#s1">1 Fundamentals</a></li>
+      <li><a href="#s2">2 Python + backend</a></li>
+      <li><a href="#s3">3 Data + SQL</a></li>
+      <li><a href="#s4">4 ML basics</a></li>
+      <li><a href="#s5">5 LLM apps</a></li>
+      <li><a href="#s6">6 Deploy</a></li>
+      <li><a href="#s7">7 Proof project</a></li>
+      <li><a href="#cv">How I read your CV</a></li>
+      <li><a href="#mistakes">Mistakes I see</a></li>
+    </ul>
+  </nav>
+</section>
+
+<section class="sec" aria-labelledby="road-h">
+  <h2 id="road-h">The roadmap, <em>in seven stages</em></h2>
+  <p class="sub">Go roughly in order. Stages 5 to 7 overlap in real life: you will build, deploy and evaluate in loops. Don't wait to "finish" a stage before you build something.</p>
+
+  <ol class="road">
+    <li class="stage" id="s1">
+      <span class="num" aria-hidden="true">1</span>
+      <h3>Fundamentals: how software actually runs</h3>
+      <p class="learn">Programming basics, data structures, the terminal, Git, how HTTP and the web work, and enough complexity thinking to know why your loop is slow.</p>
+      <div class="cols">
+        <div class="card check-card">
+          <span class="lab check">What I check</span>
+          <ul>
+            <li>A Git history that looks like real work: small commits, messages a teammate could read.</li>
+            <li>Can you explain one bug you fixed, step by step, without the word "somehow"?</li>
+            <li>In the interview: can you say what your own code costs in time and memory? I care more about that than a memorised puzzle answer.</li>
+          </ul>
+        </div>
+        <div class="card">
+          <span class="lab free">Free resources</span>
+          <ul class="res">
+            <li><a href="https://cs50.harvard.edu/x/" rel="noopener">Harvard CS50x</a><span>Intro to computer science, free online</span></li>
+            <li><a href="https://missing.csail.mit.edu/" rel="noopener">MIT: The Missing Semester</a><span>Shell, Git, editors, debugging</span></li>
+            <li><a href="https://git-scm.com/book/en/v2" rel="noopener">Pro Git (official book)</a><span>Read chapters 1 to 3 first</span></li>
+          </ul>
+        </div>
+      </div>
+    </li>
+
+    <li class="stage" id="s2">
+      <span class="num" aria-hidden="true">2</span>
+      <h3>Python + one backend framework</h3>
+      <p class="learn">Python properly (functions, classes, typing, virtual environments, tests), then ONE framework, FastAPI or Django, until you can build a small API from an empty folder.</p>
+      <div class="cols">
+        <div class="card check-card">
+          <span class="lab check">What I check</span>
+          <ul>
+            <li>One API you built yourself: input validation, error handling, a few tests. One done well beats three frameworks listed.</li>
+            <li>Clean basics: pinned dependencies, a README that runs, no secrets in the repo.</li>
+            <li>Can you read code you didn't write and tell me what it does? Most of the job is that.</li>
+          </ul>
+        </div>
+        <div class="card">
+          <span class="lab free">Free resources</span>
+          <ul class="res">
+            <li><a href="https://docs.python.org/3/tutorial/" rel="noopener">The official Python tutorial</a><span>python.org</span></li>
+            <li><a href="https://fastapi.tiangolo.com/tutorial/" rel="noopener">FastAPI tutorial</a><span>Official docs, step by step</span></li>
+            <li><a href="https://docs.djangoproject.com/en/stable/intro/tutorial01/" rel="noopener">Django tutorial</a><span>Official docs, if you pick Django</span></li>
+          </ul>
+        </div>
+      </div>
+    </li>
+
+    <li class="stage" id="s3">
+      <span class="num" aria-hidden="true">3</span>
+      <h3>Data and SQL</h3>
+      <p class="learn">SQL (joins, group by, indexes), one real database like PostgreSQL, and pandas for cleaning messy data. AI work is mostly data work wearing a nicer jacket.</p>
+      <div class="cols">
+        <div class="card check-card">
+          <span class="lab check">What I check</span>
+          <ul>
+            <li>Can you write a join with a group by on a whiteboard, roughly right, without panic?</li>
+            <li>Do you know what an index is and when a query needs one?</li>
+            <li>In your project: where did the data come from, what was wrong with it, and what did you do about it?</li>
+          </ul>
+        </div>
+        <div class="card">
+          <span class="lab free">Free resources</span>
+          <ul class="res">
+            <li><a href="https://www.postgresql.org/docs/current/tutorial.html" rel="noopener">PostgreSQL tutorial</a><span>Official docs, part I</span></li>
+            <li><a href="https://www.kaggle.com/learn/intro-to-sql" rel="noopener">Kaggle Learn: Intro to SQL</a><span>Free, exercises need a free account</span></li>
+            <li><a href="https://pandas.pydata.org/docs/getting_started/index.html" rel="noopener">pandas: getting started</a><span>Official docs</span></li>
+          </ul>
+        </div>
+      </div>
+    </li>
+
+    <li class="stage" id="s4">
+      <span class="num" aria-hidden="true">4</span>
+      <h3>Machine learning basics</h3>
+      <p class="learn">Train, validation and test splits, baselines, overfitting, the common metrics, and a few classic models with scikit-learn. You don't need to derive every formula. You do need to know when a number is lying to you.</p>
+      <div class="cols">
+        <div class="card check-card">
+          <span class="lab check">What I check</span>
+          <ul>
+            <li>Did you start with a simple baseline before the fancy model? Tell me how much the fancy one actually beat it by.</li>
+            <li>Do you know why 95% accuracy can be useless on imbalanced data, and which metric you'd use instead?</li>
+            <li>Can you explain overfitting and data leakage in plain words, with an example from your own work?</li>
+          </ul>
+        </div>
+        <div class="card">
+          <span class="lab free">Free resources</span>
+          <ul class="res">
+            <li><a href="https://developers.google.com/machine-learning/crash-course" rel="noopener">Google Machine Learning Crash Course</a><span>Free, from Google</span></li>
+            <li><a href="https://scikit-learn.org/stable/getting_started.html" rel="noopener">scikit-learn: getting started</a><span>Official docs</span></li>
+            <li><a href="https://course.fast.ai/" rel="noopener">fast.ai: Practical Deep Learning</a><span>Free course, code first</span></li>
+          </ul>
+        </div>
+      </div>
+    </li>
+
+    <li class="stage" id="s5">
+      <span class="num" aria-hidden="true">5</span>
+      <h3>LLM apps: APIs, RAG, evals, agents</h3>
+      <p class="learn">Calling a model API with structured output, retrieval-augmented generation (RAG), writing evaluations, and agents that use tools. This is the part everyone rushes to. It goes much better after stages 1 to 4.</p>
+      <div class="cols">
+        <div class="card check-card">
+          <span class="lab check">What I check</span>
+          <ul>
+            <li>My favourite question: <span class="mark">when does it give a wrong answer, and how did you catch it?</span> If you have a test set with expected answers, that already tells me a lot.</li>
+            <li>API basics done right: timeouts, retries, rate limits, and you know roughly what a request costs.</li>
+            <li>For RAG: how you chunk, how you know retrieval found the right passage, and what you changed when it didn't.</li>
+            <li>For agents: did you try the simplest version first? Knowing when NOT to build an agent is a good sign.</li>
+          </ul>
+        </div>
+        <div class="card">
+          <span class="lab free">Free resources</span>
+          <ul class="res">
+            <li><a href="https://huggingface.co/learn/llm-course" rel="noopener">Hugging Face LLM Course</a><span>Free course: models, fine-tuning, apps</span></li>
+            <li><a href="https://www.anthropic.com/research/building-effective-agents" rel="noopener">Building effective agents</a><span>Anthropic engineering write-up</span></li>
+            <li><a href="https://platform.claude.com/docs/en/test-and-evaluate/develop-tests" rel="noopener">Define success and build evals</a><span>Official Claude docs</span></li>
+          </ul>
+        </div>
+      </div>
+    </li>
+
+    <li class="stage" id="s6">
+      <span class="num" aria-hidden="true">6</span>
+      <h3>Deployment, cloud and MLOps basics</h3>
+      <p class="learn">Docker, one cloud or free hosting option, environment variables and secrets, logs, and the basics of keeping a model in production: versioning, monitoring, what happens when an API is down.</p>
+      <div class="cols">
+        <div class="card check-card">
+          <span class="lab check">What I check</span>
+          <ul>
+            <li>Does it run anywhere other than your laptop? A link I can open is worth more than a screenshot.</li>
+            <li>Secrets in environment variables, not in the code. Assume someone will open your repo.</li>
+            <li>Can you tell me what you'd watch after launch: errors, latency, cost, and answers getting worse over time?</li>
+          </ul>
+        </div>
+        <div class="card">
+          <span class="lab free">Free resources</span>
+          <ul class="res">
+            <li><a href="https://docs.docker.com/get-started/" rel="noopener">Docker: get started</a><span>Official docs</span></li>
+            <li><a href="https://madewithml.com/" rel="noopener">Made With ML</a><span>Free MLOps course, design to production</span></li>
+            <li><a href="https://developers.google.com/machine-learning/guides/rules-of-ml" rel="noopener">Google: Rules of Machine Learning</a><span>Short, practical, still holds up</span></li>
+          </ul>
+        </div>
+      </div>
+    </li>
+
+    <li class="stage" id="s7">
+      <span class="num" aria-hidden="true">7</span>
+      <h3>One portfolio project that proves it</h3>
+      <p class="learn">Pick a real problem (yours, a friend's, a small business near you), build it end to end with stages 2 to 6, deploy it, and measure it. One, done properly.</p>
+      <div class="cols">
+        <div class="card check-card">
+          <span class="lab check">What I check</span>
+          <ul>
+            <li>A README with: the problem, what you built, a live link, how you evaluated it, and what failed.</li>
+            <li>One number you moved on your own test set, with the "before" and "after".</li>
+            <li>You can defend every part in the interview. Using AI to write code is fine. Not understanding the code it wrote is not.</li>
+          </ul>
+          <p class="mine">My verdict: one deployed project beats ten certificates.</p>
+        </div>
+        <div class="card">
+          <span class="lab free">Free resources</span>
+          <ul class="res">
+            <li><a href="https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-readmes" rel="noopener">GitHub Docs: About READMEs</a><span>How to write the front page of your project</span></li>
+            <li><a href="https://huggingface.co/docs/hub/spaces" rel="noopener">Hugging Face Spaces</a><span>Free hosting for small ML demos</span></li>
+          </ul>
+        </div>
+      </div>
+    </li>
+  </ol>
+</section>
+
+<section class="sec" id="cv" aria-labelledby="cv-h">
+  <h2 id="cv-h">How I read <em>your CV</em></h2>
+  <p class="sub">Your CV gets seconds, not minutes. One recruiter eye-tracking study (Ladders, 2018) measured an average of 7.4 seconds on the first screen. It is one company's study and doesn't say how many recruiters took part, so treat it as an average, not a rule. Here's what I look at in that time. My practice, not a law.</p>
+  <div class="cv">
+    <div class="card"><b class="n">1</b>The role at the top. Does it match the job, in plain words?</div>
+    <div class="card"><b class="n">2</b>One result you moved, with its number. What changed because you were there?</div>
+    <div class="card"><b class="n">3</b>A link to something you built and deployed, that I can actually open.</div>
+  </div>
+  <p class="note"><b>Honest version?</b> The long skills list with 30 tools in it, I usually skip. It tells me what you've heard of, not what you've done.</p>
+
+  <div class="lines">
+    <div class="line weak"><span class="lab miss">Hard to judge</span><p>Built an AI chatbot using Python, LangChain, OpenAI, RAG, vector DB.</p></div>
+    <div class="line strong"><span class="lab check">Easy to judge</span><p>Built a RAG assistant for a college FAQ; correct answers on my 50-question test set went from 31 to 42 after I changed chunking; live demo + repo linked.</p></div>
+  </div>
+  <p class="src">The second line is an example of the shape, not a real candidate. The study: <a href="https://www.hrdive.com/news/eye-tracking-study-shows-recruiters-look-at-resumes-for-7-seconds/541582/" rel="noopener">Ladders eye-tracking study 2018, reported by HR Dive (8 Nov 2018)</a>.</p>
+  <p class="verdict"><b>Verdict:</b>proof in the first two lines.</p>
+</section>
+
+<section class="sec" id="mistakes" aria-labelledby="mis-h">
+  <h2 id="mis-h">Mistakes <em>I see</em></h2>
+  <p class="sub">Patterns from the CVs and interviews I've seen. Every one of them is fixable.</p>
+  <ol class="miss">
+    <li><div><b>Ten certificates, zero deployed projects.</b><span>A certificate says you finished a course. A deployed project says you finished something nobody asked you to.</span></div></li>
+    <li><div><b>A skills list with every tool, and proof of none.</b><span>Pick the three you'd happily be grilled on. Remove the rest or move them to the bottom.</span></div></li>
+    <li><div><b>Jumping to agents before you can write a SQL join.</b><span>The fancy part sits on boring parts. Interviews test the boring parts.</span></div></li>
+    <li><div><b>"It works" with no test set.</b><span>If you never measured it, you don't know when it's wrong. Neither do I.</span></div></li>
+    <li><div><b>The unchanged tutorial project.</b><span>Tutorials are fine for learning. On a CV, show what you changed, what broke and what you added.</span></div></li>
+    <li><div><b>API keys committed to GitHub.</b><span>I notice. So do bots that scan public repos for keys.</span></div></li>
+    <li><div><b>Code you can't explain.</b><span>Use AI as much as you like. In the interview, it's just you and the code.</span></div></li>
+  </ol>
+</section>
+</main>
+
+<footer>
+  <p class="sig">Honest Version · Rahul</p>
+  <p>Questions about a stage? Ask me on Instagram.</p>
+  <a class="ig" href="https://www.instagram.com/imsikarwar.rahul/" rel="noopener">Instagram @imsikarwar.rahul</a>
+  <p>This page is free. No sign-up, no tracking, no paid or affiliate links. Every resource above is free to read; a few ask for a free account to do the exercises. Links were checked on 13 Nov 2026.</p>
+  <p>"What I check" is my personal view as an engineer who now hires. It is not the view of any employer, and it is not a promise of a job. <a href="../">More free resources</a>.</p>
+</footer>
+</div>
+</body>
+</html>
